@@ -19,20 +19,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.jonta.cn","root":"/","scheme":"Mist","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、      C&#x2F;C++语法概念1.1.  派生，构造，虚拟继承和其他(1)   派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定 (2)   抽象类不允许实例化只能做接口 (3)   默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参： testClass();          &#x2F;* 默认构造函数 *&#x2F; testClass(int a, c">
+<meta property="og:type" content="article">
 <meta property="og:title" content="C&#x2F;C++知识点笔记">
-<meta property="og:url" content="http://yoursite.com/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Jonta&#39;s blog">
+<meta property="og:url" content="http://blog.jonta.cn/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Jonta&#39;s Blog">
+<meta property="og:description" content="一、      C&#x2F;C++语法概念1.1.  派生，构造，虚拟继承和其他(1)   派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定 (2)   抽象类不允许实例化只能做接口 (3)   默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参： testClass();          &#x2F;* 默认构造函数 *&#x2F; testClass(int a, c">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-29T06:47:59.000Z">
-<meta property="article:modified_time" content="2020-05-29T07:08:16.333Z">
+<meta property="article:published_time" content="2020-05-29T06:47:00.000Z">
+<meta property="article:modified_time" content="2020-05-31T12:51:35.071Z">
 <meta property="article:author" content="Jonta">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="http://blog.jonta.cn/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>C/C++知识点笔记 | Jonta's blog</title>
+  <title>C/C++知识点笔记 | Jonta's Blog</title>
   
 
 
@@ -96,9 +98,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Jonta's blog</h1>
+      <h1 class="site-title">Jonta's Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">Likely</p>
   </div>
 
   <div class="site-nav-right">
@@ -178,6 +181,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -192,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://blog.jonta.cn/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +205,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonta's blog">
+      <meta itemprop="name" content="Jonta's Blog">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -209,15 +213,28 @@
         </h1>
 
         <div class="post-meta">
+          
+             <span class="post-meta-item-icon">
+                    <i class="fa fa-thumbtack"></i>
+             </span>
+             <font color="blue">置顶</font>
+             <span class="post-meta-divider">|</span>
+          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-29 14:47:59 / 修改时间：15:08:16" itemprop="dateCreated datePublished" datetime="2020-05-29T14:47:59+08:00">2020-05-29</time>
+              <time title="创建时间：2020-05-29 14:47:00" itemprop="dateCreated datePublished" datetime="2020-05-29T14:47:00+08:00">2020-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-31 20:51:35" itemprop="dateModified" datetime="2020-05-31T20:51:35+08:00">2020-05-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,7 +263,95 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="一、-C-C-语法概念"><a href="#一、-C-C-语法概念" class="headerlink" title="一、      C/C++语法概念"></a>一、      C/C++语法概念</h2><h3 id="1-1-派生，构造，虚拟继承和其他"><a href="#1-1-派生，构造，虚拟继承和其他" class="headerlink" title="1.1.  派生，构造，虚拟继承和其他"></a>1.1.  派生，构造，虚拟继承和其他</h3><p>(1)   派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定</p>
+<p>(2)   抽象类不允许实例化只能做接口</p>
+<p>(3)   默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参：</p>
+<p>testClass();          /* 默认构造函数 */</p>
+<p>testClass(int a, char b);    /* 构造函数 */</p>
+<p>testClass(int a=10,char b=’c’);  /* 默认构造函数 */</p>
+<p>实例化时无参构造不能有括号，例如：ClassTest instance(); 这样就成了函数声明了</p>
+<a id="more"></a>
+<p>(4)   构造函数调用顺序：基类构造函数-&gt;子类成员变量构造函数-&gt;子类构造函数</p>
+<p>(5)   构造函数里初始化列表初始化顺序由成员变量的声明顺序决定。 成员变量构造函数有参数的需要在本构造初始化</p>
+<p>(6)   虚拟继承：为了解决菱形二义性问题。vitural public 最先构造</p>
+<p>(7)   在类的外部定义虚函数时，不用也不能再声明为”virtual”，调用静态成员不用对象，直接类名::静态成员，派生对象要调用基类成员，必须在成员函数名前加上范围(类名::)类中类；调用子类成员必须对子类实例化</p>
+<p>(8)   存在虚函数：派生类赋值给基类，比如 A B各有虚函数，C继承A和B</p>
+<p>   C abj；</p>
+<p>   A* pA=&abj;</p>
+<p>   B* pB=&abj;</p>
+<p>   C* pC=&abj;</p>
+<p>解释一下：ClassC虚表指针有了两个，分别在在对象首地址偏移0和4字节，pA指向的是基类ClassA基类虚表指针，pB指向的是基类ClassB虚表指针，然后pC指向按继承顺序第一个继承的类虚表指针也就是pA，所以pC=pA，pB与他们不相等。</p>
+<p>(9)   构造函数没有返回值，可以是内联函数，析构函数能内联，但是不建议，并不短小</p>
+<p>(10) 函数指针定义时可以带形参，编译器不报错</p>
+<p>(11) 友元能通过对象访问类中的所有成员</p>
+<p>(12) 绝不重新定义继承而来的缺省参数（Never redefine function’s inherited default parameters value.）就是虚函数覆盖后使用基类的默认参数</p>
+<p>(13) a是类A的私有变量，只能通过类A的方法对其赋值</p>
+<p>(14) 编译器在为类对象分配栈空间时，会先检查类的析构函数的访问性，其实不光是析构函数，只要是非静态的函数，编译器都会进行检查。如果类的析构函数是私有的，则编译器不会在栈空间上为类对象分配内存。</p>
+<p>(15) Int test() const{ };不允许修改成员变量，可以加mutable修饰</p>
+<p>(16) C++类的中有两个特殊的构造函数，(1)无参构造函数，(2)拷贝构造函数。它们的特殊之处在于：</p>
+<p>(1)当类中没有定义任何构造函数时，编译器会默认提供一个无参构造函数且其函数体为空；</p>
+<p>(2)当类中没有定义拷贝构造函数时，编译器会默认提供一个拷贝构造函数，进行成员变量之间的拷贝。(这个拷贝操作是浅拷贝)</p>
+<p>(17) 结构体中不能定义自身类型变量，可以添加static修饰</p>
+<p>(18) 关于整形提升char a=128 129 255 ,关键是原码形式写入内存，读取系统会认为是负数，减一取反,符号位不变，这是相对于原来的类型，后面运算以系统认为为准，比如a=128, 系统认为a=-128，然后a=-128参与运算，无符号和有符号转换以补码为准</p>
+<p>(19) 基类指针指向子类对象实现动态绑定，后一部分是new一个子类对象，先执行new，再执行基类的构造函数不涉及动态绑定，动态绑定只有通过指针或者引用虚函数才会发生，不建议在构造函数和析构函数中调用虚函数</p>
+<p>(20) 空类中默认产生的成员函数：默认构造，析构，拷贝构造，赋值</p>
+<p>(21) 结构体最后一个成员为：char data[0]; 目的是柔性数组，sizeof不计算内存</p>
+<p>(22) 不可重载运算符：</p>
+<p>.(点运算符),通常用于去对象的成员,但是-&gt;(箭头运算符),是可以重载的</p>
+<p>::(域运算符),即类名+域运算符,取成员,不可以重载</p>
+<p>.<em>(点星运算符,)不可以重载,成员指针运算符”.</em>,即成员是指针类型</p>
+<p>?:(条件运算符),不可以重载</p>
+<p>sizeof,不可以重载</p>
+<p>(23) 只能使用成员函数重载的运算符：=, (), [], -&gt;,new,delete </p>
+<p>(24) 拷贝构造函数被调用的三种情况：</p>
+<p>1、当使用类的一个对象去初始化该类的另一个新对象时。</p>
+<p>2、如果函数的形参是类的对象，那么当调用该函数时拷贝构造函数也会被调用。</p>
+<p>3、如果函数的返回值是类的对象，那么函数执行完成返回调用者时。</p>
+<p>(25) const: 1、有const修饰的成员函数（放在参数表后下同），只能读取数据成员，不能改变数据成员；没有const的成员函数是对数据成员是可读可写的。2、常量对象可以调用const成员函数，而不能调用非const修饰的函数</p>
+<p>(26)二维数组通过二级指针传递，必须说明列值，只有把二维数组改为一个指向向量的指针数组的前提下才可以不说明。</p>
+<p>(27)C++中int a(5),b(3); a||b的结果为1 这句话是否正确，1不代表true，取决true定义，C中没有bool类型</p>
+<p>(28)数据溢出的问题<br>如：char buffer[10];<br>int counter;<br>lstrcpy(buffer, “abcdefghik”);<br>在debug版中有断言保护。但是在release版中，没有。</p>
+<p>(29)一个数与本身减一的结果按位与，结果为最右边的1变为0</p>
+<p>(30) scanf无精度控制，宽度不够补0，%o %x都是输出无符号整数，是小写</p>
+<p>(31) 局部数组不能返回字符串，指针形式可返回字符串常量</p>
+<p>(32) a&lt;&lt;b时，编译器会先将b与31进行and操作以限制左移的次数小于等于31</p>
+<p>(33) 浮点数存储：S位1bit，指数位8bit，尾数23bit</p>
+<p>(34) const int a，分不分配内存取决于编译器优化</p>
+<p>(35) 未定义的行为（由编译器处理）：变量既是左边结果，又是右边的操作数；使用越界数组；允许一个野指针读写；使用未初始化的变量。</p>
+<p>(36) C++规定类的大小不为0，空类大小为1，一个类中，虚函数本身、成员函数（包括静态与非静态）和静态数据成员都是不占用类对象的存储空间的；</p>
+<p>(37) 保护成员与公有区别：保护成员不能被外部函数所访问，派生类的成员函数中可以访问基类的保护成员，不在派生类成员函数内，不能访问基类保护成员。实例化的对象也不能访问除this外</p>
+<p>(38) switch case default的位置不受影响，都是先case，找不到再default，没有break就顺序执行</p>
+<h3 id="1-2-目标文件存储布局"><a href="#1-2-目标文件存储布局" class="headerlink" title="1.2.  目标文件存储布局"></a>1.2.  目标文件存储布局</h3><p>.bss段是全零的内存区，所以相当于对全局和静态自动初始化为0</p>
+<h3 id="1-3-Register"><a href="#1-3-Register" class="headerlink" title="1.3.  Register"></a>1.3.  Register</h3><p>(1)   Register变量必须是能被CPU所接受的类型，单个值</p>
+<p>(2)   Register可能不存放在内存中，所以不能用&amp;来获取变量的地址</p>
+<p>(3)   只有局部自动变量和形参可以作为寄存器变量，其他（如全局变量）不行</p>
+<h2 id="二、-转换运算符"><a href="#二、-转换运算符" class="headerlink" title="二、 转换运算符"></a>二、 转换运算符</h2><p>不安全来源于两个方面：其一是类型的窄化转化，会导致数据位数的丢失；其二是在类继承链中，将父类对象的地址（指针）强制转化成子类的地址（指针），这就是所谓的下行转换。“下”表示沿着继承链向下走（向子类的方向走）。</p>
+<p>类似地，上行转换的“上”表示沿继承链向上走（向父类的方向走）。</p>
+<p>C风格转换是“万能的转换”，但需要程序员把握转换的安全性，编译器无能为力；static_cast最接近于C风格转换，但在无关类指针转换时，编译器会报错，提升了安全性；dynamic_cast要求转换类型必须是指针或引用，且在下行转换时要求基类是多态的，如果发现下行转换不安全，dynamic_cast返回一个null指针，dynamic_cast总是认为void*之间的转换是安全的；reinterpret_cast可以对无关类指针进行转换，甚至可以直接将整型值转成指针，这种转换是底层的，有较强的平台依赖性，可移植性差；const_cast可以将常量转成非常量，但不会破坏原常量的const属性，只是返回一个去掉const的变量。</p>
+<h3 id="2-1-const-cast"><a href="#2-1-const-cast" class="headerlink" title="2.1.  const_cast"></a>2.1.  const_cast</h3><p>const_cast转换符是用来移除变量的const或volatile限定符</p>
+<p>int* modifier = const_cast&lt;int*&gt;(const_p);</p>
+<h3 id="2-2-static-cast"><a href="#2-2-static-cast" class="headerlink" title="2.2.  static_cast"></a>2.2.  static_cast</h3><p>static_cast相当于传统的C语言里的强制转换，该运算符把expression转换为new_type类型</p>
+<p>static_cast不能转换掉expression的const、volatile、或者__unaligned属性</p>
+<p>int b = static_cast<char>(a);</p>
+<h3 id="2-3-reinterpret-cast"><a href="#2-3-reinterpret-cast" class="headerlink" title="2.3.  reinterpret_cast"></a>2.3.  reinterpret_cast</h3><p>reinterpret_cast <new_type> (expression) 重解释转换</p>
+<p>同样要求new_type是指针或引用</p>
+<h3 id="2-4-dynamic-cast"><a href="#2-4-dynamic-cast" class="headerlink" title="2.4.  dynamic_cast"></a>2.4.  dynamic_cast</h3><p>dynamic_cast &lt; type-id &gt; ( expression)</p>
+<p>该运算符把expression转换成type-id类型的对象。Type-id必须是类的指针、类的引用或者void*；将基类的指针或引用安全地转换成派生类的指针或引用</p>
+<h2 id="三、STL"><a href="#三、STL" class="headerlink" title="三、STL"></a>三、STL</h2><p><strong>关于迭代器失效的问题、小心使用**</strong>STL<strong><strong>中的</strong></strong>erase**</p>
+<h3 id="3-1-顺序容器"><a href="#3-1-顺序容器" class="headerlink" title="3.1.  顺序容器"></a>3.1.  顺序容器</h3><h4 id="3-1-1-vector"><a href="#3-1-1-vector" class="headerlink" title="3.1.1.     vector"></a>3.1.1.     vector</h4><p>(1)   Vector作为函数的参数或者返回值时，需要注意它的写法：</p>
+<p>double Distance(vector<int>&amp;a, vector<int>&amp;b)</p>
+<p>(2)   删除指定位置的元素时返回一个迭代器，指向删除元素的下一个元素</p>
+<p>(3)   内部数据结构：数组。</p>
+<p>在末尾增加或者删除元素所需时间与元素数目无关，在中间或者开头增加或者删除元素所需时间是随元素数目呈线性变化。</p>
+<h4 id="3-1-2-list"><a href="#3-1-2-list" class="headerlink" title="3.1.2.     list"></a>3.1.2.     list</h4><p>(1)   double Distance(vector<int>&amp;a, vector<int>&amp;b)</p>
+<p>(2)   内部数据结构：双向环状链表</p>
+<p>不能随机访问一个元素，可双向遍历，在开头，末尾和中间的任何地方增加或者删除元素所需时间都是常量。</p>
+<h4 id="3-1-3-deque"><a href="#3-1-3-deque" class="headerlink" title="3.1.3.     deque"></a>3.1.3.     deque</h4><p>(1)   double Distance(vector<int>&amp;a, vector<int>&amp;b)</p>
+<p>(2)   内部数据结构是：数组</p>
+<p>随机访问每个元素，所需要的时间为常量。在开头和末尾增加元素所需时间与元素数目无关，在中间增加或删除所需时间随元素数目呈线性变化。</p>
+<h3 id="3-2-关联容器"><a href="#3-2-关联容器" class="headerlink" title="3.2.  关联容器"></a>3.2.  关联容器</h3><h4 id="3-2-1-map"><a href="#3-2-1-map" class="headerlink" title="3.2.1.     map"></a>3.2.1.     map</h4><p>键唯一，元素默认按键的升序排列</p>
+<h4 id="3-2-2-set"><a href="#3-2-2-set" class="headerlink" title="3.2.2.     set"></a>3.2.2.     set</h4><p>键和值相等。键唯一，元素默认按升序排列</p>
+
     </div>
 
     
@@ -261,12 +366,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/29/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="prev" title="java基础知识">
-      <i class="fa fa-chevron-left"></i> java基础知识
+    <a href="/2020/05/27/hello-world/" rel="prev" title="Hexo">
+      <i class="fa fa-chevron-left"></i> Hexo
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/29/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="next" title="Python基础知识">
-      Python基础知识 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/29/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="next" title="java基础知识">
+      java基础知识 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -326,11 +431,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-C-C-语法概念"><span class="nav-number">1.</span> <span class="nav-text">一、      C&#x2F;C++语法概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-派生，构造，虚拟继承和其他"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.  派生，构造，虚拟继承和其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-目标文件存储布局"><span class="nav-number">1.2.</span> <span class="nav-text">1.2.  目标文件存储布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Register"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.  Register</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-转换运算符"><span class="nav-number">2.</span> <span class="nav-text">二、 转换运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-const-cast"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.  const_cast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-static-cast"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.  static_cast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-reinterpret-cast"><span class="nav-number">2.3.</span> <span class="nav-text">2.3.  reinterpret_cast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-dynamic-cast"><span class="nav-number">2.4.</span> <span class="nav-text">2.4.  dynamic_cast</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、STL"><span class="nav-number">3.</span> <span class="nav-text">三、STL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-顺序容器"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.  顺序容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-vector"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1.     vector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-list"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2.     list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-deque"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.3.     deque</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-关联容器"><span class="nav-number">3.2.</span> <span class="nav-text">3.2.  关联容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-map"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1.     map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-set"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2.     set</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jonta"
+      src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">Jonta</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -380,12 +488,12 @@
 
 <div class="copyright">
   
-  &copy; 2015 – 
+  &copy; 2016 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">create by jonta</span>
+  <span class="author" itemprop="copyrightHolder">Create By Jonta</span>
 </div>
 
         

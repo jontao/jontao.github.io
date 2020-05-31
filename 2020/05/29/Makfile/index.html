@@ -19,20 +19,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.jonta.cn","root":"/","scheme":"Mist","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、基本语法1.1.  自动化变量$@ 表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Makfile">
-<meta property="og:url" content="http://yoursite.com/2020/05/29/Makfile/index.html">
-<meta property="og:site_name" content="Jonta&#39;s blog">
+<meta property="og:url" content="http://blog.jonta.cn/2020/05/29/Makfile/index.html">
+<meta property="og:site_name" content="Jonta&#39;s Blog">
+<meta property="og:description" content="一、基本语法1.1.  自动化变量$@ 表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-29T06:52:21.000Z">
-<meta property="article:modified_time" content="2020-05-29T07:06:12.005Z">
+<meta property="article:modified_time" content="2020-05-30T14:56:29.567Z">
 <meta property="article:author" content="Jonta">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/29/Makfile/">
+<link rel="canonical" href="http://blog.jonta.cn/2020/05/29/Makfile/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>Makfile | Jonta's blog</title>
+  <title>Makfile | Jonta's Blog</title>
   
 
 
@@ -96,9 +98,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Jonta's blog</h1>
+      <h1 class="site-title">Jonta's Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">Likely</p>
   </div>
 
   <div class="site-nav-right">
@@ -178,6 +181,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -192,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/Makfile/">
+    <link itemprop="mainEntityOfPage" href="http://blog.jonta.cn/2020/05/29/Makfile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +205,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jonta's blog">
+      <meta itemprop="name" content="Jonta's Blog">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -209,15 +213,28 @@
         </h1>
 
         <div class="post-meta">
+          
+             <span class="post-meta-item-icon">
+                    <i class="fa fa-thumbtack"></i>
+             </span>
+             <font color="blue">置顶</font>
+             <span class="post-meta-divider">|</span>
+          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-29 14:52:21 / 修改时间：15:06:12" itemprop="dateCreated datePublished" datetime="2020-05-29T14:52:21+08:00">2020-05-29</time>
+              <time title="创建时间：2020-05-29 14:52:21" itemprop="dateCreated datePublished" datetime="2020-05-29T14:52:21+08:00">2020-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-30 22:56:29" itemprop="dateModified" datetime="2020-05-30T22:56:29+08:00">2020-05-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,7 +263,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。</p>
+<a id="more"></a>
+
+<p><span style="color:red;">$% </span> 当规则的目标文件是一个静态库文件时，代表静态库的一个成员名。例如，规则的目标是“foo.a(bar.o)”，那么，“$%”的值就为“bar.o”，“$@”的值为“foo.a”。如果目标不是静态库文件，其值为空。</p>
+<p><span style="color:red;">$&lt;</span>规则的第一个依赖文件名。如果是一个目标文件使用隐含规则来重建，则它代表由隐含规则加入的第一个依赖文件。</p>
+<p><span style="color:red;">$?</span>所有比目标文件更新的依赖文件列表，空格分割。如果目标是静态库文件名，代表的是库成员（.o文件）。</p>
+<p><span style="color:red;">$^</span>规则的所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有库成员（.o文件）名。一个文件可重复的出现在目标的依赖中，变量“$^”只记录它的一次引用情况。就是说变量“$^”会去掉重复的依赖文件。</p>
+<p><span style="color:red;"> $+</span>类似“$^”，但是它保留了依赖文件中重复出现的文件。主要用在程序链接时库的交叉引用场合。$* 在模式规则和静态模式规则中，代表“*”。</p>
+<h4 id="1-2-文本处理函数"><a href="#1-2-文本处理函数" class="headerlink" title="1.2.  文本处理函数"></a>1.2.  文本处理函数</h4><p>$(<span style="color:red;">subst</span> ee,EE,feet on the street)</p>
+<p>替换“feet on the street”中的“ee”为“EE”，结果得到字符串“fEEt on the strEEt”</p>
+<p>$(<span style="color:red;">patsubst</span> %.c,%.o,x.c.c bar.c)</p>
+<p>把字串“x.c.c bar.c”中以.c结尾的单词替换成以.o结尾的字符。函数的返回结果是“x.c.o bar.o”</p>
+<p>sources := foo.c bar.c baz.s ugh.h</p>
+<p>foo: $(sources)</p>
+<p>cc $(<span style="color:red;">filter</span> %.c %.s,$(sources)) -o foo<br>使用“$(<span style="color:red;">filter</span> %.c %.s,$(sources))”的返回值给cc来编译生成目标“foo”，函数返回值为“foo.c bar.c baz.s”<br>STR = a b c  LOSTR = $(strip $(STR)) 去空格</p>
+
     </div>
 
     
@@ -261,13 +293,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/29/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6svn/" rel="prev" title="版本控制svn">
-      <i class="fa fa-chevron-left"></i> 版本控制svn
+    <a href="/2020/05/29/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6git/" rel="prev" title="版本控制git">
+      <i class="fa fa-chevron-left"></i> 版本控制git
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/29/%E5%9F%BA%E4%BA%8EXlinx-zynq%E7%9A%846G%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F/" rel="next" title="zynq 6G传输系统">
-      zynq 6G传输系统 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -326,11 +355,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、基本语法"><span class="nav-number">1.</span> <span class="nav-text">一、基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-自动化变量"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.  自动化变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-文本处理函数"><span class="nav-number">1.2.</span> <span class="nav-text">1.2.  文本处理函数</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jonta"
+      src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">Jonta</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -380,12 +412,12 @@
 
 <div class="copyright">
   
-  &copy; 2015 – 
+  &copy; 2016 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">create by jonta</span>
+  <span class="author" itemprop="copyrightHolder">Create By Jonta</span>
 </div>
 
         
