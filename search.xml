@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>C/C++知识点笔记</title>
-    <url>/2020/05/29/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/</url>
+    <url>/2020/05/30/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="一、-C-C-语法概念"><a href="#一、-C-C-语法概念" class="headerlink" title="一、      C/C++语法概念"></a>一、      C/C++语法概念</h2><h3 id="1-1-派生，构造，虚拟继承和其他"><a href="#1-1-派生，构造，虚拟继承和其他" class="headerlink" title="1.1.  派生，构造，虚拟继承和其他"></a>1.1.  派生，构造，虚拟继承和其他</h3><p>(1)   派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定</p>
 <p>(2)   抽象类不允许实例化只能做接口</p>
 <p>(3)   默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参：</p>
@@ -98,7 +98,7 @@
   </entry>
   <entry>
     <title>Makfile</title>
-    <url>/2020/05/29/Makfile/</url>
+    <url>/2020/05/31/Makfile/</url>
     <content><![CDATA[<h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。</p>
 <a id="more"></a>
 
