@@ -97,7 +97,7 @@
       </categories>
   </entry>
   <entry>
-    <title>Makfile</title>
+    <title>Makefile</title>
     <url>/2020/05/31/Makfile/</url>
     <content><![CDATA[<h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。</p>
 <a id="more"></a>
