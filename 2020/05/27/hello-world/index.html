@@ -23,15 +23,15 @@
     var CONFIG = {"hostname":"blog.jonta.cn","root":"/","scheme":"Mist","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="this is test">
+  <meta name="description" content="Markdown 标题 我展示的是一级标题 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;   我展示的是二级标题 —————–   # 一级标题   ## 二级标题   ### 三级标题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test">
+<meta property="og:title" content="Markdown标记">
 <meta property="og:url" content="http://blog.jonta.cn/2020/05/27/hello-world/index.html">
 <meta property="og:site_name" content="Jonta&#39;s Blog">
-<meta property="og:description" content="this is test">
+<meta property="og:description" content="Markdown 标题 我展示的是一级标题 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;   我展示的是二级标题 —————–   # 一级标题   ## 二级标题   ### 三级标题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-27T14:08:00.000Z">
-<meta property="article:modified_time" content="2020-06-01T02:08:13.457Z">
+<meta property="article:modified_time" content="2020-06-01T08:21:18.070Z">
 <meta property="article:author" content="Jonta">
 <meta name="twitter:card" content="summary">
 
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>Test | Jonta's Blog</title>
+  <title>Markdown标记 | Jonta's Blog</title>
   
 
 
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Test
+          Markdown标记
         </h1>
 
         <div class="post-meta">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-01 10:08:13" itemprop="dateModified" datetime="2020-06-01T10:08:13+08:00">2020-06-01</time>
+                <time title="修改时间：2020-06-01 16:21:18" itemprop="dateModified" datetime="2020-06-01T16:21:18+08:00">2020-06-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,72 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>this is test</p>
+        <ul>
+<li>Markdown 标题<ul>
+<li>我展示的是一级标题 ========  </li>
+<li>我展示的是二级标题 —————–  </li>
+<li># 一级标题  </li>
+<li>## 二级标题  </li>
+<li>### 三级标题  <a id="more"></a></li>
+</ul>
+</li>
+<li>Markdown 段落  <ul>
+<li>字体<ul>
+<li>段落的换行是使用两个以上空格加上回车</li>
+<li>*斜体文本*</li>
+<li>_斜体文本_</li>
+<li>**粗体文本**</li>
+<li>__粗体文本__</li>
+<li>***粗斜体文本***</li>
+<li>___粗斜体文本___</li>
+</ul>
+</li>
+<li>分隔线:你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线<ul>
+<li>***</li>
+<li>* * *</li>
+<li>*****</li>
+<li>- - -</li>
+<li>-———</li>
+</ul>
+</li>
+<li>删除线：如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线 ~~ 即可</li>
+<li>下划线：&lt;&lt;u&gt;&gt;带下划线文本&lt;&lt;u&gt;&gt;</li>
+</ul>
+</li>
+<li>列表:<ul>
+<li>列表嵌套只需在子列表中的选项添加四个空格即可</li>
+<li>无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记</li>
+<li>有序列表使用数字并加上 . 号来表示</li>
+</ul>
+</li>
+<li>Markdown 区块:区块引用是在段落开头使用 &gt; 符号 ，然后后面紧跟一个空格符号<ul>
+<li>嵌套 &gt; 最外层, &gt; &gt; 第一层嵌套, &gt; &gt; &gt; 第二层嵌套如：<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Markdown 代码<ul>
+<li>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（`）</li>
+<li>代码区块使用 4 个空格或者一个制表符（Tab 键）</li>
+</ul>
+</li>
+<li>链接<ul>
+<li>[test](<a href="https://blog.jonta.cn">https://blog.jonta.cn</a>)</li>
+<li>高级链接：<ul>
+<li>这个链接用 1 作为网址变量 [Google][1]<br>这个链接用 runoob 作为网址变量 [Runoob][runoob]<br>然后在文档的结尾为变量赋值（网址）<br>[1]: <a href="http://www.google.com/" target="_blank" rel="noopener">http://www.google.com/</a><br>[runoob]: <a href="http://www.runoob.com/" target="_blank" rel="noopener">http://www.runoob.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>图片：![alt 属性文本](图片地址 “可选标题”)也可用变量</li>
+<li>表格：<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  表头   | 表头  |<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  —-  | —-  |<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 单元格  | 单元格 |<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 单元格  | 单元格 |<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对齐方式：<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -: 设置内容和标题栏居右对齐。<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :- 设置内容和标题栏居左对齐。<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :-: 设置内容和标题栏居中对齐。  </li>
+<li>HTML:不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。目前支持的 HTML 元素有：<code>&lt;kbd&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;</code>等 </li>
+<li>公式:当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染</li>
+</ul>
 
     </div>
 
@@ -354,14 +419,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
