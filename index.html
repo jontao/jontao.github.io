@@ -308,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-01 11:01:03" itemprop="dateModified" datetime="2020-06-01T11:01:03+08:00">2020-06-01</time>
+                <time title="修改时间：2020-06-02 10:06:23" itemprop="dateModified" datetime="2020-06-02T10:06:23+08:00">2020-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,7 +331,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。</p>
+          <h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。<br><span style="color:red;">$% </span> 当规则的目标文件是一个静态库文件时，代表静态库的一个成员名。例如，规则的目标<br>是“foo.a(bar.o)”，那么，“$%”的值就为“bar.o”，“$@”的值为“foo.a”。如果目标不是静态库文件，其值为空。 </p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/31/Makfile/#more" rel="contents">

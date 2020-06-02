@@ -37,21 +37,10 @@ lstrcpy(buffer, &quot;abcdefghik&quot;);  </code></pre>
   <entry>
     <title>Makefile</title>
     <url>/2020/05/31/Makfile/</url>
-    <content><![CDATA[<h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。</p>
-<a id="more"></a>
-
-<p><span style="color:red;">$% </span> 当规则的目标文件是一个静态库文件时，代表静态库的一个成员名。例如，规则的目标是“foo.a(bar.o)”，那么，“$%”的值就为“bar.o”，“$@”的值为“foo.a”。如果目标不是静态库文件，其值为空。</p>
-<p><span style="color:red;">$&lt;</span>规则的第一个依赖文件名。如果是一个目标文件使用隐含规则来重建，则它代表由隐含规则加入的第一个依赖文件。</p>
-<p><span style="color:red;">$?</span>所有比目标文件更新的依赖文件列表，空格分割。如果目标是静态库文件名，代表的是库成员（.o文件）。</p>
-<p><span style="color:red;">$^</span>规则的所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有库成员（.o文件）名。一个文件可重复的出现在目标的依赖中，变量“$^”只记录它的一次引用情况。就是说变量“$^”会去掉重复的依赖文件。</p>
-<p><span style="color:red;"> $+</span>类似“$^”，但是它保留了依赖文件中重复出现的文件。主要用在程序链接时库的交叉引用场合。$* 在模式规则和静态模式规则中，代表“*”。</p>
-<h4 id="1-2-文本处理函数"><a href="#1-2-文本处理函数" class="headerlink" title="1.2.  文本处理函数"></a>1.2.  文本处理函数</h4><p>$(<span style="color:red;">subst</span> ee,EE,feet on the street)</p>
-<p>替换“feet on the street”中的“ee”为“EE”，结果得到字符串“fEEt on the strEEt”</p>
-<p>$(<span style="color:red;">patsubst</span> %.c,%.o,x.c.c bar.c)</p>
-<p>把字串“x.c.c bar.c”中以.c结尾的单词替换成以.o结尾的字符。函数的返回结果是“x.c.o bar.o”</p>
-<p>sources := foo.c bar.c baz.s ugh.h</p>
-<p>foo: $(sources)</p>
-<p>cc $(<span style="color:red;">filter</span> %.c %.s,$(sources)) -o foo<br>使用“$(<span style="color:red;">filter</span> %.c %.s,$(sources))”的返回值给cc来编译生成目标“foo”，函数返回值为“foo.c bar.c baz.s”<br>STR = a b c  LOSTR = $(strip $(STR)) 去空格</p>
+    <content><![CDATA[<h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。<br><span style="color:red;">$% </span> 当规则的目标文件是一个静态库文件时，代表静态库的一个成员名。例如，规则的目标<br>是“foo.a(bar.o)”，那么，“$%”的值就为“bar.o”，“$@”的值为“foo.a”。如果目标不是静态库文件，其值为空。 </p>
+<a id="more"></a>  
+<p><span style="color:red;">$&lt;</span>规则的第一个依赖文件名。如果是一个目标文件使用隐含规则来重建，则它代表由隐含规则加入的第一个依赖文件。<br><span style="color:red;">$?</span>所有比目标文件更新的依赖文件列表，空格分割。如果目标是静态库文件名，代表的是库成员（.o文件）。<br><span style="color:red;">$^</span>规则的所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有库成员（.o文件）名。一个文件可重复的出现在目标的依赖中，变量“$^”只记录它的一次引用情况。就是说变量“$^”会去掉重复的依赖文件。<br><span style="color:red;"> $+</span>类似“$^”，但是它保留了依赖文件中重复出现的文件。主要用在程序链接时库的交叉引用场合。$* 在模式规则和静态模式规则中，代表“*”。  </p>
+<h4 id="1-2-文本处理函数"><a href="#1-2-文本处理函数" class="headerlink" title="1.2.  文本处理函数"></a>1.2.  文本处理函数</h4><p>$(<span style="color:red;">subst</span> ee,EE,feet on the street)<br>替换“feet on the street”中的“ee”为“EE”，结果得到字符串“fEEt on the strEEt”<br>$(<span style="color:red;">patsubst</span> %.c,%.o,x.c.c bar.c)<br>把字串“x.c.c bar.c”中以.c结尾的单词替换成以.o结尾的字符。函数的返回结果是“x.c.o bar.o”<br>sources := foo.c bar.c baz.s ugh.h<br>foo: $(sources)<br>cc $(<span style="color:red;">filter</span> %.c %.s,$(sources)) -o foo<br>使用“$(<span style="color:red;">filter</span> %.c %.s,$(sources))”的返回值给cc来编译生成目标“foo”，函数返回值为“foo.c bar.c baz.s”<br>STR = a b c  LOSTR = $(strip $(STR)) 去空格</p>
 ]]></content>
       <categories>
         <category>Linux</category>
