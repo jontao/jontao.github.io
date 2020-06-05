@@ -1,37 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C/C++知识点笔记</title>
-    <url>/2020/05/30/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="一、C-C-语法概念"><a href="#一、C-C-语法概念" class="headerlink" title="一、C/C++语法概念"></a>一、C/C++语法概念</h2><h3 id="1-1-派生，构造，虚拟继承和其他"><a href="#1-1-派生，构造，虚拟继承和其他" class="headerlink" title="1.1.派生，构造，虚拟继承和其他"></a>1.1.派生，构造，虚拟继承和其他</h3><p>(1)派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定<br>(2)抽象类不允许实例化只能做接口<br>(3)默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参：</p>
-<pre><code>testClass();          /* 默认构造函数 */
-testClass(int a, char b);    /* 构造函数 */
-testClass(int a=10,char b=&apos;c&apos;);  /* 默认构造函数 */  </code></pre><p>实例化时无参构造不能有括号，例如：ClassTest instance(); 这样就成了函数声明了  </p>
-<a id="more"></a>
-<p>(4) 构造函数调用顺序：基类构造函数-&gt;子类成员变量构造函数-&gt;子类构造函数<br>(5) 构造函数里初始化列表初始化顺序由成员变量的声明顺序决定。 成员变量构造函数有参数的需要在本构造初始化<br>(6) 拟继承：为了解决菱形二义性问题。vitural public 最先构造<br>(7) 在类的外部定义虚函数时，不用也不能再声明为”virtual”，调用静态成员不用对象，直接类名::静态成员，派生对象要调用基类成员，必须在成员函数名前加上范围(类名::)类中类；调用子类成员必须对子类实例化<br>(8) 存在虚函数：派生类赋值给基类，比如 A B各有虚函数，C继承A和B  </p>
-<pre><code>C abj；  
-A* pA=&amp;abj;
-B* pB=&amp;abj;
-C* pC=&amp;abj;</code></pre><p>解释一下：ClassC虚表指针有了两个，分别在在对象首地址偏移0和4字节，pA指向的是基类ClassA基类虚表指针，pB指向的是基类ClassB虚表指针，然后pC指向按继承顺序第一个继承的类虚表指针也就是pA，所以pC=pA，pB与他们不相等。<br>(9)   构造函数没有返回值，可以是内联函数，析构函数能内联，但是不建议，并不短小<br>(10) 函数指针定义时可以带形参，编译器不报错<br>(11) 友元能通过对象访问类中的所有成员<br>(12) 绝不重新定义继承而来的缺省参数（Never redefine function’s inherited default parameters value.）就是虚函数覆盖后使用基类的默认参数<br>(13) a是类A的私有变量，只能通过类A的方法对其赋值<br>(14) 编译器在为类对象分配栈空间时，会先检查类的析构函数的访问性，其实不光是析构函数，只要是非静态的函数，编译器都会进行检查。如果类的析构函数是私有的，则编译器不会在栈空间上为类对象分配内存。<br>(15) int test() const{ };不允许修改成员变量，可以加mutable修饰<br>(16) C++类的中有两个特殊的构造函数，(1)无参构造函数，(2)拷贝构造函数。它们的特殊之处在于：<br>&emsp;&emsp;当类中没有定义任何构造函数时，编译器会默认提供一个无参构造函数且其函数体为空；<br>&emsp;&emsp;当类中没有定义拷贝构造函数时，编译器会默认提供一个拷贝构造函数，进行成员变量之间的拷贝。(这个拷贝操作是浅拷贝)<br>(17) 结构体中不能定义自身类型变量，可以添加static修饰<br>(18) 关于整形提升char a=128 129 255 ,关键是原码形式写入内存，读取系统会认为是负数，减一取反,符号位不变，这是相对于原来的类型，后面运算以系统认为为准，比如a=128, 系统认为a=-128，然后a=-128参与运算，无符号和有符号转换以补码为准<br>(19) 基类指针指向子类对象实现动态绑定，后一部分是new一个子类对象，先执行new，再执行基类的构造函数不涉及动态绑定，动态绑定只有通过指针或者引用虚函数才会发生，不建议在构造函数和析构函数中调用虚函数<br>(20) 空类中默认产生的成员函数：默认构造，析构，拷贝构造，赋值<br>(21) 结构体最后一个成员为：char data[0]; 目的是柔性数组，sizeof不计算内存<br>(22) 不可重载运算符：<br>&emsp;&emsp; .(点运算符),通常用于去对象的成员,但是-&gt;(箭头运算符),是可以重载的<br>&emsp;&emsp;::(域运算符),即类名+域运算符,取成员,不可以重载<br>&emsp;&emsp;.<em>(点星运算符,)不可以重载,成员指针运算符”.</em>,即成员是指针类型<br>&emsp;&emsp;?:(条件运算符),不可以重载<br>&emsp;&emsp;sizeof,不可以重载<br>(23) 只能使用成员函数重载的运算符：=, (), [], -&gt;,new,delete<br>(24) 拷贝构造函数被调用的三种情况：<br>&emsp;&emsp;1、当使用类的一个对象去初始化该类的另一个新对象时。<br>&emsp;&emsp;2、如果函数的形参是类的对象，那么当调用该函数时拷贝构造函数也会被调用。<br>&emsp;&emsp;3、如果函数的返回值是类的对象，那么函数执行完成返回调用者时。<br>(25) const: 1、有const修饰的成员函数（放在参数表后下同），只能读取数据成员，不能改变数据成员；没有const的成员函数是对数据成员是可读可写的。2、常量对象可以调用const成员函数，而不能调用非const修饰的函数<br>(26)二维数组通过二级指针传递，必须说明列值，只有把二维数组改为一个指向向量的指针数组的前提下才可以不说明。<br>(27)C++中int a(5),b(3); a||b的结果为1 这句话是否正确，1不代表true，取决true定义，C中没有bool类型<br>(28)数据溢出的问题<br>如：  </p>
-<pre><code class="char">int counter;
-lstrcpy(buffer, &quot;abcdefghik&quot;);  </code></pre>
-<p>在debug版中有断言保护。但是在release版中，没有。<br>(29)一个数与本身减一的结果按位与，结果为最右边的1变为0<br>(30) scanf无精度控制，宽度不够补0，%o %x都是输出无符号整数，是小写<br>(31) 局部数组不能返回字符串，指针形式可返回字符串常量<br>(32) a&lt;&lt;b时，编译器会先将b与31进行and操作以限制左移的次数小于等于31<br>(33) 浮点数存储：S位1bit，指数位8bit，尾数23bit<br>(34) const int a，分不分配内存取决于编译器优化<br>(35) 未定义的行为（由编译器处理）：变量既是左边结果，又是右边的操作数；使用越界数组；允许一个野指针读写；使用未初始化的变量。<br>(36) C++规定类的大小不为0，空类大小为1，一个类中，虚函数本身、成员函数（包括静态与非静态）和静态数据成员都是不占用类对象的存储空间的；<br>(37) 保护成员与公有区别：保护成员不能被外部函数所访问，派生类的成员函数中可以访问基类的保护成员，不在派生类成员函数内，不能访问基类保护成员。实例化的对象也不能访问除this外<br>(38) switch case default的位置不受影响，都是先case，找不到再default，没有break就顺序执行  </p>
-<h3 id="1-2-目标文件存储布局"><a href="#1-2-目标文件存储布局" class="headerlink" title="1.2.  目标文件存储布局"></a>1.2.  目标文件存储布局</h3><p>.bss段是全零的内存区，所以相当于对全局和静态自动初始化为0  </p>
-<h3 id="1-3-Register"><a href="#1-3-Register" class="headerlink" title="1.3.  Register"></a>1.3.  Register</h3><p>(1)   Register变量必须是能被CPU所接受的类型，单个值<br>(2)   Register可能不存放在内存中，所以不能用&amp;来获取变量的地址<br>(3)   只有局部自动变量和形参可以作为寄存器变量，其他（如全局变量）不行  </p>
-<h2 id="二、-转换运算符"><a href="#二、-转换运算符" class="headerlink" title="二、 转换运算符"></a>二、 转换运算符</h2><p>不安全来源于两个方面：其一是类型的窄化转化，会导致数据位数的丢失；其二是在类继承链中，将父类对象的地址（指针）强制转化成子类的地址（指针），这就是所谓的下行转换。“下”表示沿着继承链向下走（向子类的方向走）。<br>类似地，上行转换的“上”表示沿继承链向上走（向父类的方向走）。<br>C风格转换是“万能的转换”，但需要程序员把握转换的安全性，编译器无能为力；static_cast最接近于C风格转换，但在无关类指针转换时，编译器会报错，提升了安全性；dynamic_cast要求转换类型必须是指针或引用，且在下行转换时要求基类是多态的，如果发现下行转换不安全，dynamic_cast返回一个null指针，dynamic_cast总是认为void*之间的转换是安全的；reinterpret_cast可以对无关类指针进行转换，甚至可以直接将整型值转成指针，这种转换是底层的，有较强的平台依赖性，可移植性差；const_cast可以将常量转成非常量，但不会破坏原常量的const属性，只是返回一个去掉const的变量。  </p>
-<h3 id="2-1-const-cast"><a href="#2-1-const-cast" class="headerlink" title="2.1.  const_cast"></a>2.1.  const_cast</h3><p>const_cast转换符是用来移除变量的const或volatile限定符<br>int* modifier = const_cast&lt;int*&gt;(const_p)  </p>
-<h3 id="2-2-static-cast"><a href="#2-2-static-cast" class="headerlink" title="2.2.  static_cast"></a>2.2.  static_cast</h3><p>static_cast相当于传统的C语言里的强制转换，该运算符把expression转换为new_type类型<br>static_cast不能转换掉expression的const、volatile、或者__unaligned属性<br>int b = static_cast<char>(a);  </p>
-<h3 id="2-3-reinterpret-cast"><a href="#2-3-reinterpret-cast" class="headerlink" title="2.3.  reinterpret_cast"></a>2.3.  reinterpret_cast</h3><p><code>reinterpret_cast &lt;new_type&gt; (expression)</code><br>重解释转换,同样要求new_type是指针或引用</p>
-<h3 id="2-4-dynamic-cast"><a href="#2-4-dynamic-cast" class="headerlink" title="2.4.  dynamic_cast"></a>2.4.  dynamic_cast</h3><p><code>dynamic_cast &lt; type-id &gt; ( expression)</code><br>该运算符把expression转换成type-id类型的对象。Type-id必须是类的指针、类的引用或者void*；将基类的指针或引用安全地转换成派生类的指针或引用</p>
-<h2 id="三、STL"><a href="#三、STL" class="headerlink" title="三、STL"></a>三、STL</h2><p>关于迭代器失效的问题、小心使用STL中的erase</p>
-<h3 id="3-1-顺序容器"><a href="#3-1-顺序容器" class="headerlink" title="3.1.  顺序容器"></a>3.1.  顺序容器</h3><h4 id="3-1-1-vector"><a href="#3-1-1-vector" class="headerlink" title="3.1.1.     vector"></a>3.1.1.     vector</h4><p>(1) Vector作为函数的参数或者返回值时，需要注意它的写法：<br><code>double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b)</code><br>(2) 删除指定位置的元素时返回一个迭代器，指向删除元素的下一个元素<br>(3) 内部数据结构：数组。<br>在末尾增加或者删除元素所需时间与元素数目无关，在中间或者开头增加或者删除元素所需时间是随元素数目呈线性变化。</p>
-<h4 id="3-1-2-list"><a href="#3-1-2-list" class="headerlink" title="3.1.2.     list"></a>3.1.2.     list</h4><p>(1) <code>double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b)</code><br>(2) 内部数据结构：双向环状链表<br>不能随机访问一个元素，可双向遍历，在开头，末尾和中间的任何地方增加或者删除元素所需时间都是常量。</p>
-<h4 id="3-1-3-deque"><a href="#3-1-3-deque" class="headerlink" title="3.1.3.     deque"></a>3.1.3.     deque</h4><p>(1) <code>double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b)</code><br>(2) 内部数据结构是：数组<br>随机访问每个元素，所需要的时间为常量。在开头和末尾增加元素所需时间与元素数目无关，在中间增加或删除所需时间随元素数目呈线性变化。</p>
-<h3 id="3-2-关联容器"><a href="#3-2-关联容器" class="headerlink" title="3.2.  关联容器"></a>3.2.  关联容器</h3><h4 id="3-2-1-map"><a href="#3-2-1-map" class="headerlink" title="3.2.1.     map"></a>3.2.1.     map</h4><p>键唯一，元素默认按键的升序排列</p>
-<h4 id="3-2-2-set"><a href="#3-2-2-set" class="headerlink" title="3.2.2.     set"></a>3.2.2.     set</h4><p>键和值相等。键唯一，元素默认按升序排列</p>
+    <title>LaTeX语法</title>
+    <url>/2020/06/04/LaTeX%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p><a href="https://github.com/DeathKing/LaTeX-Template-Cn/tree/master/Thesis" target="_blank" rel="noopener">武大清华模板</a></p>
 ]]></content>
       <categories>
-        <category>C/C++</category>
+        <category>LaTeX&amp;MD标记语言</category>
       </categories>
   </entry>
   <entry>
@@ -137,14 +112,6 @@ lstrcpy(buffer, &quot;abcdefghik&quot;);  </code></pre>
       </categories>
   </entry>
   <entry>
-    <title>zynq 6G传输系统</title>
-    <url>/2020/05/27/%E5%9F%BA%E4%BA%8EXlinx-zynq%E7%9A%846G%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>嵌入式系统设计实现</category>
-      </categories>
-  </entry>
-  <entry>
     <title>常用算法</title>
     <url>/2020/05/29/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<p>&emsp;&emsp;</p>
@@ -213,15 +180,6 @@ Oracle：<br>MySQL：<br>MariaDB：是MySQL的分支，由开源社区维护，M
       </categories>
   </entry>
   <entry>
-    <title>LaTeX语法</title>
-    <url>/2020/06/04/LaTeX%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p><a href="https://github.com/DeathKing/LaTeX-Template-Cn/tree/master/Thesis" target="_blank" rel="noopener">武大清华模板</a></p>
-]]></content>
-      <categories>
-        <category>LaTeX&amp;MD标记语言</category>
-      </categories>
-  </entry>
-  <entry>
     <title>项目视频图片合集</title>
     <url>/2020/06/04/%E9%A1%B9%E7%9B%AE%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<center>行人检测</center>
@@ -245,6 +203,48 @@ Oracle：<br>MySQL：<br>MariaDB：是MySQL的分支，由开源社区维护，M
  <img src="http://jonta.cn:5000/pic/diantiao1.jpg" width=50% width=50%>]]></content>
       <categories>
         <category>视频图像</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>zynq 6G传输系统</title>
+    <url>/2020/05/27/%E5%9F%BA%E4%BA%8EXlinx-zynq%E7%9A%846G%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>嵌入式系统设计实现</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C/C++知识点笔记</title>
+    <url>/2020/05/30/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="一、C-C-语法概念"><a href="#一、C-C-语法概念" class="headerlink" title="一、C/C++语法概念"></a>一、C/C++语法概念</h2><h3 id="1-1-派生，构造，虚拟继承和其他"><a href="#1-1-派生，构造，虚拟继承和其他" class="headerlink" title="1.1.派生，构造，虚拟继承和其他"></a>1.1.派生，构造，虚拟继承和其他</h3><p>(1)派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定<br>(2)抽象类不允许实例化只能做接口<br>(3)默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参：</p>
+<pre><code>testClass();          /* 默认构造函数 */
+testClass(int a, char b);    /* 构造函数 */
+testClass(int a=10,char b=&apos;c&apos;);  /* 默认构造函数 */  </code></pre><p>实例化时无参构造不能有括号，例如：ClassTest instance(); 这样就成了函数声明了  </p>
+<a id="more"></a>
+<p>(4) 构造函数调用顺序：基类构造函数-&gt;子类成员变量构造函数-&gt;子类构造函数<br>(5) 构造函数里初始化列表初始化顺序由成员变量的声明顺序决定。 成员变量构造函数有参数的需要在本构造初始化<br>(6) 拟继承：为了解决菱形二义性问题。vitural public 最先构造<br>(7) 在类的外部定义虚函数时，不用也不能再声明为”virtual”，调用静态成员不用对象，直接类名::静态成员，派生对象要调用基类成员，必须在成员函数名前加上范围(类名::)类中类；调用子类成员必须对子类实例化<br>(8) 存在虚函数：派生类赋值给基类，比如 A B各有虚函数，C继承A和B  </p>
+<pre><code>C abj；  
+A* pA=&amp;abj;
+B* pB=&amp;abj;
+C* pC=&amp;abj;</code></pre><p>解释一下：ClassC虚表指针有了两个，分别在在对象首地址偏移0和4字节，pA指向的是基类ClassA基类虚表指针，pB指向的是基类ClassB虚表指针，然后pC指向按继承顺序第一个继承的类虚表指针也就是pA，所以pC=pA，pB与他们不相等。<br>(9)   构造函数没有返回值，可以是内联函数，析构函数能内联，但是不建议，并不短小<br>(10) 函数指针定义时可以带形参，编译器不报错<br>(11) 友元能通过对象访问类中的所有成员<br>(12) 绝不重新定义继承而来的缺省参数（Never redefine function’s inherited default parameters value.）就是虚函数覆盖后使用基类的默认参数<br>(13) a是类A的私有变量，只能通过类A的方法对其赋值<br>(14) 编译器在为类对象分配栈空间时，会先检查类的析构函数的访问性，其实不光是析构函数，只要是非静态的函数，编译器都会进行检查。如果类的析构函数是私有的，则编译器不会在栈空间上为类对象分配内存。<br>(15) int test() const{ };不允许修改成员变量，可以加mutable修饰<br>(16) C++类的中有两个特殊的构造函数，(1)无参构造函数，(2)拷贝构造函数。它们的特殊之处在于：<br>&emsp;&emsp;当类中没有定义任何构造函数时，编译器会默认提供一个无参构造函数且其函数体为空；<br>&emsp;&emsp;当类中没有定义拷贝构造函数时，编译器会默认提供一个拷贝构造函数，进行成员变量之间的拷贝。(这个拷贝操作是浅拷贝)<br>(17) 结构体中不能定义自身类型变量，可以添加static修饰<br>(18) 关于整形提升char a=128 129 255 ,关键是原码形式写入内存，读取系统会认为是负数，减一取反,符号位不变，这是相对于原来的类型，后面运算以系统认为为准，比如a=128, 系统认为a=-128，然后a=-128参与运算，无符号和有符号转换以补码为准<br>(19) 基类指针指向子类对象实现动态绑定，后一部分是new一个子类对象，先执行new，再执行基类的构造函数不涉及动态绑定，动态绑定只有通过指针或者引用虚函数才会发生，不建议在构造函数和析构函数中调用虚函数<br>(20) 空类中默认产生的成员函数：默认构造，析构，拷贝构造，赋值<br>(21) 结构体最后一个成员为：char data[0]; 目的是柔性数组，sizeof不计算内存<br>(22) 不可重载运算符：<br>&emsp;&emsp; .(点运算符),通常用于去对象的成员,但是-&gt;(箭头运算符),是可以重载的<br>&emsp;&emsp;::(域运算符),即类名+域运算符,取成员,不可以重载<br>&emsp;&emsp;.<em>(点星运算符,)不可以重载,成员指针运算符”.</em>,即成员是指针类型<br>&emsp;&emsp;?:(条件运算符),不可以重载<br>&emsp;&emsp;sizeof,不可以重载<br>(23) 只能使用成员函数重载的运算符：=, (), [], -&gt;,new,delete<br>(24) 拷贝构造函数被调用的三种情况：<br>&emsp;&emsp;1、当使用类的一个对象去初始化该类的另一个新对象时。<br>&emsp;&emsp;2、如果函数的形参是类的对象，那么当调用该函数时拷贝构造函数也会被调用。<br>&emsp;&emsp;3、如果函数的返回值是类的对象，那么函数执行完成返回调用者时。<br>(25) const: 1、有const修饰的成员函数（放在参数表后下同），只能读取数据成员，不能改变数据成员；没有const的成员函数是对数据成员是可读可写的。2、常量对象可以调用const成员函数，而不能调用非const修饰的函数<br>(26)二维数组通过二级指针传递，必须说明列值，只有把二维数组改为一个指向向量的指针数组的前提下才可以不说明。<br>(27)C++中int a(5),b(3); a||b的结果为1 这句话是否正确，1不代表true，取决true定义，C中没有bool类型<br>(28)数据溢出的问题<br>如：  </p>
+<pre><code class="char">int counter;
+lstrcpy(buffer, &quot;abcdefghik&quot;);  </code></pre>
+<p>在debug版中有断言保护。但是在release版中，没有。<br>(29)一个数与本身减一的结果按位与，结果为最右边的1变为0<br>(30) scanf无精度控制，宽度不够补0，%o %x都是输出无符号整数，是小写<br>(31) 局部数组不能返回字符串，指针形式可返回字符串常量<br>(32) a&lt;&lt;b时，编译器会先将b与31进行and操作以限制左移的次数小于等于31<br>(33) 浮点数存储：S位1bit，指数位8bit，尾数23bit<br>(34) const int a，分不分配内存取决于编译器优化<br>(35) 未定义的行为（由编译器处理）：变量既是左边结果，又是右边的操作数；使用越界数组；允许一个野指针读写；使用未初始化的变量。<br>(36) C++规定类的大小不为0，空类大小为1，一个类中，虚函数本身、成员函数（包括静态与非静态）和静态数据成员都是不占用类对象的存储空间的；<br>(37) 保护成员与公有区别：保护成员不能被外部函数所访问，派生类的成员函数中可以访问基类的保护成员，不在派生类成员函数内，不能访问基类保护成员。实例化的对象也不能访问除this外<br>(38) switch case default的位置不受影响，都是先case，找不到再default，没有break就顺序执行  </p>
+<h3 id="1-2-目标文件存储布局"><a href="#1-2-目标文件存储布局" class="headerlink" title="1.2.  目标文件存储布局"></a>1.2.  目标文件存储布局</h3><p>.bss段是全零的内存区，所以相当于对全局和静态自动初始化为0  </p>
+<h3 id="1-3-Register"><a href="#1-3-Register" class="headerlink" title="1.3.  Register"></a>1.3.  Register</h3><p>(1)   Register变量必须是能被CPU所接受的类型，单个值<br>(2)   Register可能不存放在内存中，所以不能用&amp;来获取变量的地址<br>(3)   只有局部自动变量和形参可以作为寄存器变量，其他（如全局变量）不行  </p>
+<h2 id="二、-转换运算符"><a href="#二、-转换运算符" class="headerlink" title="二、 转换运算符"></a>二、 转换运算符</h2><p>不安全来源于两个方面：其一是类型的窄化转化，会导致数据位数的丢失；其二是在类继承链中，将父类对象的地址（指针）强制转化成子类的地址（指针），这就是所谓的下行转换。“下”表示沿着继承链向下走（向子类的方向走）。<br>类似地，上行转换的“上”表示沿继承链向上走（向父类的方向走）。<br>C风格转换是“万能的转换”，但需要程序员把握转换的安全性，编译器无能为力；static_cast最接近于C风格转换，但在无关类指针转换时，编译器会报错，提升了安全性；dynamic_cast要求转换类型必须是指针或引用，且在下行转换时要求基类是多态的，如果发现下行转换不安全，dynamic_cast返回一个null指针，dynamic_cast总是认为void*之间的转换是安全的；reinterpret_cast可以对无关类指针进行转换，甚至可以直接将整型值转成指针，这种转换是底层的，有较强的平台依赖性，可移植性差；const_cast可以将常量转成非常量，但不会破坏原常量的const属性，只是返回一个去掉const的变量。  </p>
+<h3 id="2-1-const-cast"><a href="#2-1-const-cast" class="headerlink" title="2.1.  const_cast"></a>2.1.  const_cast</h3><p>const_cast转换符是用来移除变量的const或volatile限定符<br>int* modifier = const_cast&lt;int*&gt;(const_p)  </p>
+<h3 id="2-2-static-cast"><a href="#2-2-static-cast" class="headerlink" title="2.2.  static_cast"></a>2.2.  static_cast</h3><p>static_cast相当于传统的C语言里的强制转换，该运算符把expression转换为new_type类型<br>static_cast不能转换掉expression的const、volatile、或者__unaligned属性<br>int b = static_cast<char>(a);  </p>
+<h3 id="2-3-reinterpret-cast"><a href="#2-3-reinterpret-cast" class="headerlink" title="2.3.  reinterpret_cast"></a>2.3.  reinterpret_cast</h3><p><code>reinterpret_cast &lt;new_type&gt; (expression)</code><br>重解释转换,同样要求new_type是指针或引用</p>
+<h3 id="2-4-dynamic-cast"><a href="#2-4-dynamic-cast" class="headerlink" title="2.4.  dynamic_cast"></a>2.4.  dynamic_cast</h3><p><code>dynamic_cast &lt; type-id &gt; ( expression)</code><br>该运算符把expression转换成type-id类型的对象。Type-id必须是类的指针、类的引用或者void*；将基类的指针或引用安全地转换成派生类的指针或引用</p>
+<h2 id="三、STL"><a href="#三、STL" class="headerlink" title="三、STL"></a>三、STL</h2><p>关于迭代器失效的问题、小心使用STL中的erase</p>
+<h3 id="3-1-顺序容器"><a href="#3-1-顺序容器" class="headerlink" title="3.1.  顺序容器"></a>3.1.  顺序容器</h3><h4 id="3-1-1-vector"><a href="#3-1-1-vector" class="headerlink" title="3.1.1.     vector"></a>3.1.1.     vector</h4><p>(1) Vector作为函数的参数或者返回值时，需要注意它的写法：<br><code>double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b)</code><br>(2) 删除指定位置的元素时返回一个迭代器，指向删除元素的下一个元素<br>(3) 内部数据结构：数组。<br>在末尾增加或者删除元素所需时间与元素数目无关，在中间或者开头增加或者删除元素所需时间是随元素数目呈线性变化。</p>
+<h4 id="3-1-2-list"><a href="#3-1-2-list" class="headerlink" title="3.1.2.     list"></a>3.1.2.     list</h4><p>(1) <code>double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b)</code><br>(2) 内部数据结构：双向环状链表<br>不能随机访问一个元素，可双向遍历，在开头，末尾和中间的任何地方增加或者删除元素所需时间都是常量。</p>
+<h4 id="3-1-3-deque"><a href="#3-1-3-deque" class="headerlink" title="3.1.3.     deque"></a>3.1.3.     deque</h4><p>(1) <code>double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b)</code><br>(2) 内部数据结构是：数组<br>随机访问每个元素，所需要的时间为常量。在开头和末尾增加元素所需时间与元素数目无关，在中间增加或删除所需时间随元素数目呈线性变化。</p>
+<h3 id="3-2-关联容器"><a href="#3-2-关联容器" class="headerlink" title="3.2.  关联容器"></a>3.2.  关联容器</h3><h4 id="3-2-1-map"><a href="#3-2-1-map" class="headerlink" title="3.2.1.     map"></a>3.2.1.     map</h4><p>键唯一，元素默认按键的升序排列</p>
+<h4 id="3-2-2-set"><a href="#3-2-2-set" class="headerlink" title="3.2.2.     set"></a>3.2.2.     set</h4><p>键和值相等。键唯一，元素默认按升序排列</p>
+]]></content>
+      <categories>
+        <category>C/C++</category>
       </categories>
   </entry>
 </search>
