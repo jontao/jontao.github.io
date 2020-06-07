@@ -123,13 +123,11 @@
   <entry>
     <title>数据库基础知识</title>
     <url>/2020/05/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h3 id="数据库分类"><a href="#数据库分类" class="headerlink" title="数据库分类"></a>数据库分类</h3><p><img src="https://pic4.zhimg.com/80/v2-55a8ebe8744853092c14ae7a2ae3394f_1440w.png" alt="" title="数据库分类"></p>
+    <content><![CDATA[<h3 id="数据库分类"><a href="#数据库分类" class="headerlink" title="数据库分类"></a>数据库分类</h3> <img src="https://pic4.zhimg.com/80/v2-55a8ebe8744853092c14ae7a2ae3394f_1440w.png"  width=50% width=50%/>
+
+ <a id="more"></a>
 <ul>
-<li>常用的关系型数据库<a id="more"></a>
-Oracle：<br>MySQL：<br>MariaDB：是MySQL的分支，由开源社区维护，MariaDB虽然被看作MySQL的替代品，但它在扩展功能、存储引擎上都有非常好的改进<br>PostgreSQL：也叫PGSQL，PGSQL类似于Oracle的多进程框架，可以支持高并发的应用场景，PG几乎支持所有的SQL标准，支持类型相当丰富。PG更加适合严格的企业应用场景，而MySQL更适合业务逻辑相对简单、数据可靠性要求较低的互联网场景。</li>
-</ul>
-<ul>
-<li>2.NoSQL数据库（非关系型数据库）</li>
+<li>常用的关系型数据库<br>Oracle：<br>MySQL：<br>MariaDB：是MySQL的分支，由开源社区维护，MariaDB虽然被看作MySQL的替代品，但它在扩展功能、存储引擎上都有非常好的改进<br>PostgreSQL：也叫PGSQL，PGSQL类似于Oracle的多进程框架，可以支持高并发的应用场景，PG几乎支持所有的SQL标准，支持类型相当丰富。PG更加适合严格的企业应用场景，而MySQL更适合业务逻辑相对简单、数据可靠性要求较低的互联网场景。</li>
 </ul>
 <ul>
 <li>2.NoSQL数据库（非关系型数据库）</li>
