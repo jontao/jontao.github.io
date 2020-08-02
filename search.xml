@@ -180,15 +180,18 @@
   <entry>
     <title>项目视频图片合集</title>
     <url>/2020/06/04/%E9%A1%B9%E7%9B%AE%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<center>行人检测</center>
-<video src='http://jonta.cn:5000/video/shibie2.mp4' 
+    <content><![CDATA[<center>WebRTC视频会议系统</center>
+
+<img src="http://jonta.cn:5000/resources/video/thrid.gif"  width=50% width=50%/>
+<center>行人检测</center>
+<video src='http://jonta.cn:5000/resources/video/shibie2.mp4' 
        type='video/mp4' 
        controls='controls'  
        preload="auto"
        width='50%' 
        height='50%'>
 </video>
-<video src='http://jonta.cn:5000/video/tiaoshi.mp4' 
+<video src='http://jonta.cn:5000/resources/video/tiaoshi.mp4' 
        type='video/mp4' 
        controls='controls'  
        preload="auto"
@@ -196,9 +199,8 @@
        height='50%'>
 </video>
 <center>合集</center>
- <img src="http://jonta.cn:5000/pic/heji.jpg"  width=50% width=50%/>
-<center>验证</center>
- <img src="http://jonta.cn:5000/pic/diantiao1.jpg" width=50% width=50%/>]]></content>
+<img src="http://jonta.cn:5000/resources/pic/heji.jpg"  width=50% width=50%/>
+]]></content>
       <categories>
         <category>视频图像</category>
       </categories>
