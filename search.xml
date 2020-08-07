@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>LaTeX语法</title>
-    <url>/2020/06/04/LaTeX%E8%AF%AD%E6%B3%95/</url>
+    <url>/2018/06/04/LaTeX%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p><a href="https://github.com/DeathKing/LaTeX-Template-Cn/tree/master/Thesis" target="_blank" rel="noopener">武大清华模板</a></p>
 ]]></content>
       <categories>
@@ -11,7 +11,7 @@
   </entry>
   <entry>
     <title>Makefile</title>
-    <url>/2020/05/31/Makfile/</url>
+    <url>/2019/05/31/Makfile/</url>
     <content><![CDATA[<h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><h4 id="1-1-自动化变量"><a href="#1-1-自动化变量" class="headerlink" title="1.1.  自动化变量"></a>1.1.  自动化变量</h4><p><span style="color:red;">$@ </span>表示规则的目标文件名。如果目标是一个文档文件（Linux中，一般称.a文件为文档文件，也称为静态库文件），那么它代表这个文档的文件名。在多目标模式规则中，它代表的是哪个触发规则被执行的目标文件名。<br><span style="color:red;">$% </span> 当规则的目标文件是一个静态库文件时，代表静态库的一个成员名。例如，规则的目标是<br>“foo.a(bar.o)”，那么，“$%”的值就为“bar.o”，“$@”的值为“foo.a”。如果目标不是静态库文件，其值为空。 </p>
 <a id="more"></a>  
 <p><span style="color:red;">$&lt;</span>规则的第一个依赖文件名。如果是一个目标文件使用隐含规则来重建，则它代表由隐含规则加入的第一个依赖文件。<br><span style="color:red;">$?</span>所有比目标文件更新的依赖文件列表，空格分割。如果目标是静态库文件名，代表的是库成员（.o文件）。<br><span style="color:red;">$^</span>规则的所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有库成员（.o文件）名。一个文件可重复的出现在目标的依赖中，变量“$^”只记录它的一次引用情况。就是说变量“$^”会去掉重复的依赖文件。<br><span style="color:red;"> $+</span>类似“$^”，但是它保留了依赖文件中重复出现的文件。主要用在程序链接时库的交叉引用场合。$* 在模式规则和静态模式规则中，代表“*”。  </p>
@@ -23,7 +23,7 @@
   </entry>
   <entry>
     <title>Python基础知识</title>
-    <url>/2020/05/29/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <url>/2019/05/29/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Python</category>
@@ -31,7 +31,7 @@
   </entry>
   <entry>
     <title>Markdown标记</title>
-    <url>/2020/05/27/hello-world/</url>
+    <url>/2019/05/27/hello-world/</url>
     <content><![CDATA[<ul>
 <li>Markdown 标题<ul>
 <li>我展示的是一级标题 ========  </li>
@@ -105,7 +105,7 @@
   </entry>
   <entry>
     <title>java基础知识</title>
-    <url>/2020/05/29/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <url>/2018/05/29/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>JAVA</category>
@@ -113,7 +113,7 @@
   </entry>
   <entry>
     <title>常用算法</title>
-    <url>/2020/05/29/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/</url>
+    <url>/2019/05/29/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<p>&emsp;&emsp;</p>
 ]]></content>
       <categories>
@@ -122,7 +122,7 @@
   </entry>
   <entry>
     <title>数据库基础知识</title>
-    <url>/2020/05/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <url>/2018/05/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<h3 id="数据库分类"><a href="#数据库分类" class="headerlink" title="数据库分类"></a>数据库分类</h3> <img src="https://pic4.zhimg.com/80/v2-55a8ebe8744853092c14ae7a2ae3394f_1440w.png"  width=50% width=50%/>
 
  <a id="more"></a>
@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>机器学习</title>
-    <url>/2020/05/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+    <url>/2018/05/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>算法合集</category>
@@ -150,7 +150,7 @@
   </entry>
   <entry>
     <title>版本控制git</title>
-    <url>/2020/05/29/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6git/</url>
+    <url>/2019/05/29/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6git/</url>
     <content><![CDATA[<p>git reset –hard xxx<br>提交git add .  git commit -s<br>scp -p -P 29418 <a href="mailto:liujt@172.9.3.130">liujt@172.9.3.130</a>:hooks/commit-msg .git/hooks/<br>git commit –amend<br>git push origin HEAD:refs/for/mpt320<br>git rebase origin/mpt320<br>git show commid</p>
 <a id="more"></a>
 <p>repo manifest -r //显示版本<br>git checkout -b develop origin/develop<br>git push origin HEAD:refs/for/develop<br>git status //显示红色修改未提交的代码</p>
@@ -162,7 +162,7 @@
   </entry>
   <entry>
     <title>版本控制svn</title>
-    <url>/2020/05/27/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6svn/</url>
+    <url>/2018/05/27/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6svn/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>GIT&amp;SVN版本控制</category>
@@ -170,7 +170,7 @@
   </entry>
   <entry>
     <title>设计模式</title>
-    <url>/2020/06/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <url>/2019/06/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>C/C++</category>
@@ -179,7 +179,7 @@
   </entry>
   <entry>
     <title>项目视频图片合集</title>
-    <url>/2020/06/04/%E9%A1%B9%E7%9B%AE%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87%E5%90%88%E9%9B%86/</url>
+    <url>/2019/06/04/%E9%A1%B9%E7%9B%AE%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<center>WebRTC视频会议系统</center>
 
 <img src="http://jonta.cn:5000/resources/video/thrid.gif"  width=50% width=50%/>
@@ -207,7 +207,7 @@
   </entry>
   <entry>
     <title>zynq 6G传输系统</title>
-    <url>/2020/05/27/%E5%9F%BA%E4%BA%8EXlinx-zynq%E7%9A%846G%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F/</url>
+    <url>/2018/05/27/%E5%9F%BA%E4%BA%8EXlinx-zynq%E7%9A%846G%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>嵌入式系统设计实现</category>
@@ -215,7 +215,7 @@
   </entry>
   <entry>
     <title>C/C++知识点笔记</title>
-    <url>/2020/05/30/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/</url>
+    <url>/2018/05/30/C-C-%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="一、C-C-语法概念"><a href="#一、C-C-语法概念" class="headerlink" title="一、C/C++语法概念"></a>一、C/C++语法概念</h2><h3 id="1-1-派生，构造，虚拟继承和其他"><a href="#1-1-派生，构造，虚拟继承和其他" class="headerlink" title="1.1.派生，构造，虚拟继承和其他"></a>1.1.派生，构造，虚拟继承和其他</h3><p>(1)派生与基类都有非虚函数，调用哪个函数由指针类型决定，而不是指向的对象类型决定<br>(2)抽象类不允许实例化只能做接口<br>(3)默认构造函数：没有显式提供初始化调用的构造函数，或者为所有形参提供默认实参：</p>
 <pre><code>testClass();          /* 默认构造函数 */
 testClass(int a, char b);    /* 构造函数 */
