@@ -247,4 +247,10 @@ lstrcpy(buffer, &quot;abcdefghik&quot;);  </code></pre>
         <category>视频图像</category>
       </categories>
   </entry>
+  <entry>
+    <title>PortDefinition</title>
+    <url>/2019/03/03/PortDefinition/</url>
+    <content><![CDATA[<p>4000:blog<br>4000/admin:Blog Manager System<br>5000:Website/php<br>6000:MLDonkey telnet_port<br>6001:MLDonkey gui_port<br>6080:MLDonkey admin ed2k downloader<br>6500:WebLatex<br>7000:FTP<br>7001/static/reactapp/build:React<br>7002:Django wsgi<br>7003:walker-admin<br>9001:stock-forecasting-js</p>
+]]></content>
+  </entry>
 </search>
