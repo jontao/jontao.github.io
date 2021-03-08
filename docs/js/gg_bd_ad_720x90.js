@@ -26,17 +26,17 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 //document.writeln('</div>');
  
  
-document.writeln("<div style=\"width:728px;margin:10px auto;\"><script type=\"text/javascript\"><!--");
-document.writeln("google_ad_client = \"ca-pub-0107013120141921\";");
-document.writeln("/* demo页面横幅广告 */")
-document.writeln("google_ad_slot = \"4192399144\";");
-document.writeln("google_ad_width = 728;");
-document.writeln("google_ad_height = 90;");
-document.writeln("//-->");
-document.writeln("</script>");
-document.writeln("<script type=\"text/javascript\"");
-document.writeln("src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">");
-document.writeln("</script></div>");
+// document.writeln("<div style=\"width:728px;margin:10px auto;\"><script type=\"text/javascript\"><!--");
+// document.writeln("google_ad_client = \"ca-pub-0107013120141921\";");
+// document.writeln("/* demo页面横幅广告 */")
+// document.writeln("google_ad_slot = \"4192399144\";");
+// document.writeln("google_ad_width = 728;");
+// document.writeln("google_ad_height = 90;");
+// document.writeln("//-->");
+// document.writeln("</script>");
+// document.writeln("<script type=\"text/javascript\"");
+// document.writeln("src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">");
+// document.writeln("</script></div>");
  
  
  
@@ -51,7 +51,7 @@ document.writeln("</script></div>");
 //document.writeln('<script>');
 //document.writeln('(adsbygoogle = window.adsbygoogle || []).push({
  
-});');
+//});');
 //document.writeln('</script>');
 //document.writeln("</div>");
  
@@ -70,6 +70,4 @@ document.writeln("</script></div>");
  
 document.write ('<div style="display:none"><script language="javascript" type="text/javascript" src="http://js.users.51.la/4473358.js"></script></div>');
  
-document.writeln('<style type="text/css">.source-url{
-font-size:15px;text-align:center
-}</style>');
+document.writeln('<style type="text/css">.source-url{font-size:15px;text-align:center}</style>');
