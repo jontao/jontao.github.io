@@ -26,22 +26,22 @@ body {
   position: absolute;
   width: 120px;
   height: 120px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   text-align: center;
   align-items: center;
   justify-content: center;
   border-radius: 120px;
   display: none;
   text-decoration: none;
-  color: #333;
+  color: #000000;
   transition: all 1s ease;
   box-shadow: 0 0 15px #222;
-  font-family: "segoe ui";
+  font-family: "方正舒体";
   font-weight: 200;
-  font-size: 16px;
+  font-size: 18px;
 }
 .radmenu .selected {
-  background: rgba(51, 51, 51, 0.9);
+  background: rgba(51, 51, 51, 0.5);
   display: flex;
   top: calc(50% - 60px);
   left: calc(50% - 60px);
